@@ -1,0 +1,22 @@
+:root {
+  --orange: #ee7f33;
+}
+
+.bg-orange {
+  background-color: var(--orange);
+}
+.text-orange {
+  color: var(--orange);
+}
+.bg-header {
+  background-image: url(../assets/images/header-bg.webp);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+.header-logo {
+  height: 60px;
+}
+.hover-text-orange:hover {
+  color: var(--orange) !important;
+}
