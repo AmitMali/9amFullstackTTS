@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="foo">learn <u>javascript</u></h1>
+    <script>
+      //   document.write("hello javascript");
+      //   console.log("hello console.");
+      //   console.error("this an error");
+      //   console.warn("this a warning");
+      //   window.alert("hello i am alert");
+      var h1 = document.getElementById("foo");
+      console.log(h1.innerHTML);
+      console.log(h1.innerText);
+      h1.innerHTML = "Updated from <u>javascript</u>";
+      h1.innerText = "Updated from <u>javascript</u>";
+    </script>
+  </body>
+</html>
