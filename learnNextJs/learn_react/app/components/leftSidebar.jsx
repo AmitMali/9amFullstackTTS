@@ -1,24 +1,24 @@
 export default function LeftSidebar() {
   return (
     <nav>
-      <ul class="nav flex-column">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">
+      <ul className="nav flex-column">
+        <li className="nav-item">
+          <a className="nav-link active" aria-current="page" href="#">
             Active
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
+        <li className="nav-item">
+          <a className="nav-link" href="#">
             Link
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
+        <li className="nav-item">
+          <a className="nav-link" href="#">
             Link
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">
+        <li className="nav-item">
+          <a className="nav-link disabled" aria-disabled="true">
             Disabled
           </a>
         </li>
