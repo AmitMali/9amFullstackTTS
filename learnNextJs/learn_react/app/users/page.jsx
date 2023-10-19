@@ -1,32 +1,29 @@
+"use client";
+import { useEffect, useState } from "react";
 import SingleUserCard from "../components/usercards/singleUser";
-
+import axios from "axios";
+import Link from "next/link";
 const page = () => {
-  const user = {
-    id: 1,
-    name: "Leanne Graham",
-    username: "Bret",
-    email: "Sincere@april.biz",
-    address: {
-      street: "Kulas Light",
-      suite: "Apt. 556",
-      city: "Gwenborough",
-      zipcode: "92998-3874",
-      geo: {
-        lat: "-37.3159",
-        lng: "81.1496",
-      },
-    },
-    phone: "1-770-736-8031 x56442",
-    website: "hildegard.org",
-    company: {
-      name: "Romaguera-Crona",
-      catchPhrase: "Multi-layered client-server neural-net",
-      bs: "harness real-time e-markets",
-    },
-  };
+  const [users, setUsers] = useState();
+  function loadUsers() {
+    axios
+      .get("https://jsonplaceholder.typicode.com/users")
+      .then((result) => setUsers(result.data));
+  }
+  useEffect(() => {
+    loadUsers();
+  }, []);
+
   return (
-    <div>
-      <SingleUserCard user={user} />
+    <div className="flex gap-3 flex-wrap">
+      {users &&
+        users.map((user) => {
+          return (
+            <Link href={`users/${user.id}`}>
+              <SingleUserCard user={user} />
+            </Link>
+          );
+        })}
     </div>
   );
 };
