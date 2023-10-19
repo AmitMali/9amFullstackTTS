@@ -19,6 +19,10 @@ const Navbar = () => {
       href: "/dashboard",
     },
     {
+      title: "Users",
+      href: "/users",
+    },
+    {
       title: "About",
       href: "/about",
     },
