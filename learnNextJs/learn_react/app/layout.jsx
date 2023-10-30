@@ -1,9 +1,8 @@
-import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Navbar from "./components/navbar/navbar";
-
 const inter = Inter({ subsets: ["latin"] });
+import { UserProvider } from "@auth0/nextjs-auth0/client";
 
 export const metadata = {
   title: "Create Next App",
@@ -13,15 +12,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`bg-light-subtle${inter.className}`}>
-        <Navbar />
-        <div className=" max-w-screen-xl  mx-auto ">{children}</div>
-      </body>
-      <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"
-      ></script>
+      <UserProvider>
+        <body className={`bg-light-subtle${inter.className}`}>
+          <Navbar />
+          <div className=" max-w-screen-xl  mx-auto ">{children}</div>
+        </body>
+      </UserProvider>
     </html>
   );
 }
