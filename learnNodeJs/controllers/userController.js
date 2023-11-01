@@ -6,6 +6,14 @@ const userProfile = (req, res) => {
   res.send("show user Profile info");
 };
 const userCreate = (req, res) => {
-  res.send("user creation will go here..");
+  console.log(req.body);
+  res.send("req is recived");
 };
-module.exports = { allUsers, userProfile, userCreate };
+const showUser = (req, res) => {
+  console.log(req.params);
+  id = req.params.id;
+  res.json({
+    id,
+  });
+};
+module.exports = { allUsers, userProfile, userCreate, showUser };
